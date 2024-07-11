@@ -2,6 +2,7 @@ package main
 
 import (
 	"echo-template/conf"
+	"echo-template/db"
 	"echo-template/routes"
 	"fmt"
 	"net/http"
@@ -24,6 +25,9 @@ func (cv *CustomValidator)Validate(i interface{})error{
 
 //MAIN FUNCTION
 func main() {
+
+	//Init db connection
+	db.Init()
 
 	app := routes.Init()
 

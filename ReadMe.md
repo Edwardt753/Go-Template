@@ -21,3 +21,7 @@
 ### 6. CORS config
 
 ## go get github.com/rs/cors
+
+### 7. Install sql driver
+
+## go get -u github.com/go-sql-driver/mysql

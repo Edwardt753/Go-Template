@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"echo-template/controllers"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -23,14 +24,7 @@ func Init() *echo.Echo {
 	})
 
 
-	e.Any("/user", func(c echo.Context)(err error){
-		u:=new(User)
-		if err = c.Bind(u); err != nil {
-			return
-		}
-
-		return c.JSON(http.StatusOK,u)
-	})
+	e.GET("/user", controllers.FetchAllUser)
 
 	e.POST("/post", func(c echo.Context)error{
 		u :=new(User)
